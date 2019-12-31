@@ -1,9 +1,7 @@
-import * as React from 'react';
+import * as React from "react";
 
 export const useMyHook = () => {
-  let [{
-    counter
-  }, setState] = React.useState<{
+  let [{ counter }, setState] = React.useState<{
     counter: number;
   }>({
     counter: 0
@@ -12,8 +10,8 @@ export const useMyHook = () => {
   React.useEffect(() => {
     let interval = window.setInterval(() => {
       counter++;
-      setState({counter})
-    }, 1000)
+      setState({ counter });
+    }, 1000);
     return () => {
       window.clearInterval(interval);
     };
